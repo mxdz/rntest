@@ -1,6 +1,4 @@
 import styled from '@emotion/native';
-import {Platform, TextStyle} from 'react-native';
-
 //
 //
 

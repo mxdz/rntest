@@ -5,10 +5,10 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import styled from '@emotion/native';
 
 import {faker} from '@faker-js/faker';
-import {RootStackParamList} from './stack';
-import {getImage} from './utils/image';
+import {RootStackParamList} from '../../stack';
+import {getImage} from '../../utils/image';
 import {Container} from './components/container';
-import {Typography} from './components/typography';
+import {Typography} from '../../components/typography';
 import {DetailsLine} from './components/details-line';
 import {DetailsTitle} from './components/details-title';
 import {Cart} from './components/cart';
@@ -23,7 +23,7 @@ const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
 
 //
 
-export const Item = () => {
+const ItemScreen = () => {
   const nav =
     useNavigation<
       NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
@@ -108,3 +108,5 @@ ItemDiscountedPrice.defaultProps = {
   fontSize: 18,
   color: 'black',
 };
+
+export default ItemScreen;

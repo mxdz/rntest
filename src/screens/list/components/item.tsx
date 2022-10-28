@@ -7,7 +7,7 @@ import {Typography} from '../../../components/typography';
 import {RootStackParamList} from '../../../stack';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {IListItem} from '../index';
-import { Avatar } from '../../../components/avatar';
+import { Avatar } from './avatar';
 
 //
 //

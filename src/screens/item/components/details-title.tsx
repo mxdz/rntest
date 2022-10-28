@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
 
-import {Typography} from './typography';
+import {Typography} from '../../../components/typography';
 
 //
 //
