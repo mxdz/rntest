@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
+import {FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import ListData from '../../utils/fake-data';
@@ -19,10 +19,12 @@ export interface IListItem {
 
 const ListScreen = () => {
   return (
-    <SafeAreaView edges={['top', 'bottom']}>
-      <ScrollView contentContainerStyle={{paddingHorizontal: 16}}>
-        {ListData.map(item => <ListItem key={item.id} item={item} />)}
-      </ScrollView>
+    <SafeAreaView edges={['top', 'bottom']} >
+      <FlatList
+        data={ListData}
+        renderItem={({item}) => <ListItem item={item} />}
+        keyExtractor={(item) => item.id}
+      />
     </SafeAreaView>
   );
 };

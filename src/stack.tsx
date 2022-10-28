@@ -19,7 +19,7 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 const Stack = () => {
   return (
     <RootStack.Navigator
-      initialRouteName="ListScreens"
+      initialRouteName="ListScreen"
       screenOptions={{
         headerShadowVisible: false,
         headerBackTitle: '',
@@ -39,7 +39,9 @@ const Stack = () => {
       <RootStack.Screen
         name="ItemScreen"
         component={Item}
-        options={{title: 'Item'}}
+        options={({ route }) => ({
+          title: route?.params?.name
+        })}
       />
     </RootStack.Navigator>
   );

@@ -36,10 +36,6 @@ export const Item = () => {
     return <Typography>Loading ...</Typography>;
   }
 
-  nav.setOptions({
-    title: params.name,
-  });
-
   //
   //
 

@@ -24,7 +24,7 @@ export const CartQuantity: React.FC<{
         </Typography>
 
         <QuantityButton
-          onPress={() => update(quantity + 1)}
+          onPress={() => update(quantity - 1)}
           underlayColor="#EDEBF2">
           <Typography color="#522973">-</Typography>
         </QuantityButton>

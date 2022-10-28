@@ -21,7 +21,7 @@ export const ListItem: React.FC<{item: IListItem}> = ({item}) => {
     >();
 
   return (
-    <ListItemContainer onPress={() => nav.navigate('Itemscreen', item)}>
+    <ListItemContainer onPress={() => nav.navigate('ItemScreen', item)}>
       <Avatar style={styles.image} source={{uri: getImage(thumbnailSize, item.id)}} />
 
       <View style={styles.flex}>
