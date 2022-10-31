@@ -19,12 +19,11 @@ export interface IListItem {
 
 const ListScreen = () => {
   return (
-    <SafeAreaView edges={['top', 'bottom']} >
+    <SafeAreaView edges={['top', 'bottom']}>
       <FlatList
         data={ListData}
-        initialNumToRender={5}
         renderItem={({item}) => <ListItem item={item} />}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
         contentContainerStyle={{paddingHorizontal: 16}}
       />
     </SafeAreaView>

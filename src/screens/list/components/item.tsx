@@ -7,12 +7,12 @@ import {Typography} from '../../../components/typography';
 import {RootStackParamList} from '../../../stack';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {IListItem} from '../index';
-import { Avatar } from './avatar';
+import {Avatar} from './avatar';
 
 //
 //
 
-const thumbnailSize = 600;
+const thumbnailSize = 100;
 
 const ListItem: React.FC<{item: IListItem}> = ({item}) => {
   const nav =
@@ -22,22 +22,37 @@ const ListItem: React.FC<{item: IListItem}> = ({item}) => {
 
   return (
     <ListItemContainer onPress={() => nav.navigate('ItemScreen', item)}>
-      <Avatar style={styles.image} source={{uri: getImage(thumbnailSize, item.id)}} />
+      <Avatar
+        style={styles.image}
+        source={{uri: getImage(thumbnailSize, item.id)}}
+      />
 
       <View style={styles.flex}>
-        <Typography weight="medium" color="black">{item.name}</Typography>
+        <Typography weight="medium" color="black">
+          {item.name}
+        </Typography>
         {!item.salePrice ? (
-          <Typography style={item.salePrice ? styles.discounted : undefined} color="black">SAR {item.price}</Typography>
+          <Typography
+            style={item.salePrice ? styles.discounted : undefined}
+            color="black">
+            SAR {item.price}
+          </Typography>
         ) : null}
 
         {item.salePrice ? (
           <Typography color="#DA2121">
-            <Typography style={item.salePrice ? styles.discounted : undefined} color="black">SAR {item.price}</Typography>
+            <Typography
+              style={item.salePrice ? styles.discounted : undefined}
+              color="black">
+              SAR {item.price}
+            </Typography>
             {'  '}SAR {item.salePrice}
           </Typography>
         ) : null}
 
-        <Typography fontSize={14} color="#545454">Brand: {item.name}</Typography>
+        <Typography fontSize={14} color="#545454">
+          Brand: {item.name}
+        </Typography>
       </View>
     </ListItemContainer>
   );

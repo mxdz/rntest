@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {Dimensions, ScrollView, Text, View} from 'react-native';
-import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {Dimensions, ScrollView} from 'react-native';
+import {RouteProp, useRoute} from '@react-navigation/native';
 import styled from '@emotion/native';
 
 import {faker} from '@faker-js/faker';
@@ -24,10 +23,6 @@ const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
 //
 
 const ItemScreen = () => {
-  const nav =
-    useNavigation<
-      NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
-    >();
   const {params} = useRoute<RouteProp<RootStackParamList, 'ItemScreen'>>();
 
   const [quantity, setQuantity] = useState<number>(5);
@@ -59,7 +54,9 @@ const ItemScreen = () => {
               SAR {params.price}
             </Typography>
           ) : (
-            <Typography color="black" fontSize={18}>SAR {params.price}</Typography>
+            <Typography color="black" fontSize={18}>
+              SAR {params.price}
+            </Typography>
           )}
         </Container>
 
@@ -76,10 +73,10 @@ const ItemScreen = () => {
           </DetailsLine>
 
           <Typography weight="medium" />
-          <Typography weight="medium" color="black">Specifications</Typography>
-          <DetailsLine label="Weight">
-            {SPEC_4} kg
-          </DetailsLine>
+          <Typography weight="medium" color="black">
+            Specifications
+          </Typography>
+          <DetailsLine label="Weight">{SPEC_4} kg</DetailsLine>
           <DetailsLine label="Model">{SPEC_3}</DetailsLine>
           <DetailsLine label="Battery">Included</DetailsLine>
         </Container>

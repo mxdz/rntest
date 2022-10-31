@@ -1,5 +1,5 @@
 import React, {Dispatch, SetStateAction} from 'react';
-import {Alert} from 'react-native'
+import {Alert} from 'react-native';
 import styled from '@emotion/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
