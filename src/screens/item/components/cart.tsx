@@ -1,3 +1,4 @@
+import React, {Dispatch, SetStateAction} from 'react';
 import {Alert} from 'react-native'
 import styled from '@emotion/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -9,7 +10,10 @@ import {Typography} from '../../../components/typography';
 //
 //
 
-export const Cart: React.FC<any> = ({quantity, update}) => {
+export const Cart: React.FC<{
+  quantity: number;
+  update: Dispatch<SetStateAction<number>>;
+}> = ({quantity, update}) => {
   const insets = useSafeAreaInsets();
 
   return (

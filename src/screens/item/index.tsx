@@ -41,16 +41,14 @@ const ItemScreen = () => {
 
   return (
     <React.Fragment>
-      <ScrollView>
+      <ScrollView contentContainerStyle={{paddingBottom: 20}}>
         <Container>
           <ItemImage
             source={{uri: getImage(900, params.id)}}
             size={Dimensions.get('screen').width * 0.9}
           />
-        </Container>
 
-        <Container>
-          <Typography fontSize={18} weight="semiBold">
+          <Typography color="black" fontSize={18} weight="semiBold">
             {params.name}
           </Typography>
 
@@ -61,26 +59,29 @@ const ItemScreen = () => {
               SAR {params.price}
             </Typography>
           ) : (
-            <Typography fontSize={18}>SAR {params.price}</Typography>
+            <Typography color="black" fontSize={18}>SAR {params.price}</Typography>
           )}
         </Container>
 
         <Container>
-          <Typography>{params.description}</Typography>
+          <Typography color="black">{params.description}</Typography>
         </Container>
 
         <Container>
           <DetailsTitle>Details</DetailsTitle>
           <DetailsLine label="Brand">{params.brand}</DetailsLine>
           <DetailsLine label="Color">{SPEC_1}</DetailsLine>
-          <DetailsLine label="SKU">{SPEC_2}</DetailsLine>
+          <DetailsLine label="SKU">
+            <Typography weight="medium">{SPEC_2}</Typography>
+          </DetailsLine>
 
           <Typography weight="medium" />
-          <Typography weight="medium">Specifications</Typography>
-          <DetailsLine label="Type">{SPEC_3}</DetailsLine>
+          <Typography weight="medium" color="black">Specifications</Typography>
           <DetailsLine label="Weight">
             {SPEC_4} kg
           </DetailsLine>
+          <DetailsLine label="Model">{SPEC_3}</DetailsLine>
+          <DetailsLine label="Battery">Included</DetailsLine>
         </Container>
       </ScrollView>
 

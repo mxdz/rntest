@@ -23,12 +23,13 @@ const Stack = () => {
       screenOptions={{
         headerShadowVisible: false,
         headerBackTitle: '',
+        headerTitleAlign: 'center',
         headerTitleStyle: {
           fontSize: 16,
           ...(ThemeFont.medium as any),
         },
         contentStyle: {
-          backgroundColor: '#eee',
+          backgroundColor: '#E6E6E6',
         },
       }}>
       <RootStack.Screen

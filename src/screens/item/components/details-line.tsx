@@ -8,7 +8,7 @@ import {Typography} from '../../../components/typography';
 
 export const DetailsLine: React.FC<{
   label?: React.ReactNode;
-  children: string;
+  children: React.ReactNode;
 }> = ({label, children}) => {
   return (
     <DetailsLineContainer>
@@ -36,4 +36,5 @@ const DetailsLineContent = styled(Typography)({
 
 DetailsLineContent.defaultProps = {
   fontSize: 14,
+  color: 'black',
 };

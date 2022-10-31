@@ -7,7 +7,7 @@ import {Typography} from '../../../components/typography';
 //
 
 export const CartQuantity: React.FC<{
-  quantity: any;
+  quantity: number;
   update: Dispatch<SetStateAction<number>>;
 }> = ({quantity, update}) => {
   return (

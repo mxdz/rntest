@@ -14,7 +14,7 @@ import { Avatar } from './avatar';
 
 const thumbnailSize = 600;
 
-export const ListItem: React.FC<{item: IListItem}> = ({item}) => {
+const ListItem: React.FC<{item: IListItem}> = ({item}) => {
   const nav =
     useNavigation<
       NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
@@ -25,14 +25,14 @@ export const ListItem: React.FC<{item: IListItem}> = ({item}) => {
       <Avatar style={styles.image} source={{uri: getImage(thumbnailSize, item.id)}} />
 
       <View style={styles.flex}>
-        <Typography weight="medium">{item.name}</Typography>
+        <Typography weight="medium" color="black">{item.name}</Typography>
         {!item.salePrice ? (
-          <Typography style={item.salePrice ? styles.discounted : undefined}>SAR {item.price}</Typography>
+          <Typography style={item.salePrice ? styles.discounted : undefined} color="black">SAR {item.price}</Typography>
         ) : null}
 
         {item.salePrice ? (
           <Typography color="#DA2121">
-            <Typography style={item.salePrice ? styles.discounted : undefined}>SAR {item.price}</Typography>
+            <Typography style={item.salePrice ? styles.discounted : undefined} color="black">SAR {item.price}</Typography>
             {'  '}SAR {item.salePrice}
           </Typography>
         ) : null}
@@ -73,3 +73,5 @@ const styles = StyleSheet.create({
     color: '#DA2121',
   },
 });
+
+export default React.memo(ListItem);

@@ -3,7 +3,7 @@ import {FlatList} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import ListData from '../../utils/fake-data';
-import {ListItem} from './components/item';
+import ListItem from './components/item';
 
 //
 //
@@ -11,10 +11,10 @@ import {ListItem} from './components/item';
 export interface IListItem {
   id: string;
   name: string;
-  description: String;
+  description: string;
   price: string;
-  salePrice: any;
-  brand: String;
+  salePrice: string;
+  brand: string;
 }
 
 const ListScreen = () => {
@@ -22,8 +22,10 @@ const ListScreen = () => {
     <SafeAreaView edges={['top', 'bottom']} >
       <FlatList
         data={ListData}
+        initialNumToRender={5}
         renderItem={({item}) => <ListItem item={item} />}
         keyExtractor={(item) => item.id}
+        contentContainerStyle={{paddingHorizontal: 16}}
       />
     </SafeAreaView>
   );
