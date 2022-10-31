@@ -29,7 +29,7 @@ const Stack = () => {
           ...(ThemeFont.medium as any),
         },
         contentStyle: {
-          backgroundColor: '#E6E6E6',
+          backgroundColor: '#f0f0f0',
         },
       }}>
       <RootStack.Screen

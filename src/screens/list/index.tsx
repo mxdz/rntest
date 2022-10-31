@@ -24,7 +24,6 @@ const ListScreen = () => {
         data={ListData}
         renderItem={({item}) => <ListItem item={item} />}
         keyExtractor={item => item.id}
-        contentContainerStyle={{paddingHorizontal: 16}}
       />
     </SafeAreaView>
   );
